@@ -1,0 +1,34 @@
+Opperating with 27 processes of maximum 33 loops on 459 entries
+Peer   6 finished! Reads:    0 | Writes:    1 times | average waiting time 0.03
+Peer   7 finished! Reads:    1 | Writes:    0 times | average waiting time 0.12
+Peer   4 finished! Reads:    3 | Writes:    3 times | average waiting time 0.18
+Peer   5 finished! Reads:    3 | Writes:    2 times | average waiting time 0.18
+Peer  21 finished! Reads:    0 | Writes:    1 times | average waiting time 0.21
+Peer  12 finished! Reads:    1 | Writes:    1 times | average waiting time 0.27
+Peer  16 finished! Reads:   10 | Writes:    0 times | average waiting time 0.30
+Peer   9 finished! Reads:    4 | Writes:    2 times | average waiting time 0.33
+Peer  11 finished! Reads:    3 | Writes:    3 times | average waiting time 0.39
+Peer   0 finished! Reads:   14 | Writes:    0 times | average waiting time 0.42
+Peer  13 finished! Reads:    2 | Writes:    3 times | average waiting time 0.42
+Peer  18 finished! Reads:    1 | Writes:    1 times | average waiting time 0.45
+Peer   3 finished! Reads:   16 | Writes:    0 times | average waiting time 0.48
+Peer  15 finished! Reads:    2 | Writes:    3 times | average waiting time 0.48
+Peer   2 finished! Reads:   17 | Writes:    0 times | average waiting time 0.48
+Peer  20 finished! Reads:    2 | Writes:    1 times | average waiting time 0.55
+Peer   1 finished! Reads:    0 | Writes:   19 times | average waiting time 0.58
+Peer   8 finished! Reads:   12 | Writes:    1 times | average waiting time 0.64
+Peer  25 finished! Reads:    1 | Writes:    2 times | average waiting time 0.70
+Peer  24 finished! Reads:    2 | Writes:    2 times | average waiting time 0.70
+Peer  22 finished! Reads:    1 | Writes:    4 times | average waiting time 0.70
+Peer  10 finished! Reads:   14 | Writes:    0 times | average waiting time 0.73
+Peer  23 finished! Reads:    2 | Writes:    4 times | average waiting time 0.76
+Peer  14 finished! Reads:   12 | Writes:    1 times | average waiting time 0.82
+Peer  17 finished! Reads:   12 | Writes:    2 times | average waiting time 0.94
+Peer  19 finished! Reads:    0 | Writes:   33 times | average waiting time 1.00
+Peer  26 finished! Reads:    0 | Writes:   33 times | average waiting time 1.21
+-----------------------Coordinator results-----------------------
+Coordinator finally ended
+The total number of processes was 27, with each one running maximum 33 times
+459 entries were allocated, to operate on
+In total, they were 122 writes and 135 reads
+-----------------------------------------------------------------

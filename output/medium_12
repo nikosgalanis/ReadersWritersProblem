@@ -1,0 +1,27 @@
+Opperating with 20 processes of maximum 10 loops on 255 entries
+Peer   0 finished! Reads:    0 | Writes:    1 times | average waiting time 0.00
+Peer  17 finished! Reads:    0 | Writes:    1 times | average waiting time 0.00
+Peer   2 finished! Reads:    0 | Writes:    1 times | average waiting time 0.10
+Peer   4 finished! Reads:    0 | Writes:    1 times | average waiting time 0.10
+Peer   1 finished! Reads:    0 | Writes:    2 times | average waiting time 0.20
+Peer   8 finished! Reads:    0 | Writes:    4 times | average waiting time 0.20
+Peer  16 finished! Reads:    0 | Writes:    1 times | average waiting time 0.20
+Peer   9 finished! Reads:    0 | Writes:    4 times | average waiting time 0.30
+Peer  10 finished! Reads:    0 | Writes:    4 times | average waiting time 0.40
+Peer  15 finished! Reads:    0 | Writes:    1 times | average waiting time 0.40
+Peer   3 finished! Reads:    1 | Writes:    2 times | average waiting time 0.50
+Peer  18 finished! Reads:    0 | Writes:    2 times | average waiting time 0.50
+Peer   5 finished! Reads:    1 | Writes:    3 times | average waiting time 0.80
+Peer   6 finished! Reads:    1 | Writes:    8 times | average waiting time 0.80
+Peer  11 finished! Reads:    0 | Writes:    9 times | average waiting time 0.80
+Peer  13 finished! Reads:    0 | Writes:    9 times | average waiting time 0.80
+Peer   7 finished! Reads:    0 | Writes:    9 times | average waiting time 0.90
+Peer  12 finished! Reads:    0 | Writes:    9 times | average waiting time 0.90
+Peer  14 finished! Reads:    0 | Writes:    9 times | average waiting time 0.90
+Peer  19 finished! Reads:    0 | Writes:   10 times | average waiting time 1.00
+-----------------------Coordinator results-----------------------
+Coordinator finally ended
+The total number of processes was 20, with each one running maximum 10 times
+255 entries were allocated, to operate on
+In total, they were 90 writes and 3 reads
+-----------------------------------------------------------------

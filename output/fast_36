@@ -1,0 +1,21 @@
+Opperating with 14 processes of maximum 36 loops on 15 entries
+Peer   5 finished! Reads:    0 | Writes:    1 times | average waiting time 0.06
+Peer   0 finished! Reads:    4 | Writes:    1 times | average waiting time 0.17
+Peer  11 finished! Reads:    1 | Writes:   20 times | average waiting time 0.56
+Peer  12 finished! Reads:    0 | Writes:   21 times | average waiting time 0.58
+Peer  13 finished! Reads:    0 | Writes:   21 times | average waiting time 0.61
+Peer   4 finished! Reads:    0 | Writes:   25 times | average waiting time 0.69
+Peer   1 finished! Reads:   26 | Writes:    1 times | average waiting time 0.72
+Peer   2 finished! Reads:   27 | Writes:    0 times | average waiting time 0.75
+Peer   3 finished! Reads:   26 | Writes:    1 times | average waiting time 0.78
+Peer   7 finished! Reads:   28 | Writes:    2 times | average waiting time 0.78
+Peer   8 finished! Reads:   29 | Writes:    1 times | average waiting time 0.81
+Peer   9 finished! Reads:   30 | Writes:    0 times | average waiting time 0.83
+Peer  10 finished! Reads:   28 | Writes:    2 times | average waiting time 0.86
+Peer   6 finished! Reads:    0 | Writes:   31 times | average waiting time 0.86
+-----------------------Coordinator results-----------------------
+Coordinator finally ended
+The total number of processes was 14, with each one running maximum 36 times
+15 entries were allocated, to operate on
+In total, they were 127 writes and 199 reads
+-----------------------------------------------------------------
