@@ -1,10 +1,10 @@
 # ReadersWritersProblem
 This problem deals with situations in which many threads try to access the same shared resource at one time. Some threads may read and some may write, with the constraint that no process may access the shared resource while another process is currently writing to it.
 
-# Implementing
+## Implementing
 This project is implemented in C language, using basic thread operations such as fork, and using functions to allocate shared memory, under the shm library. Each process "takes advantage" of the shared memory, for a random time, given by the expodential distribution. The project was implemented for the needs of an Operating Systems course.
 
-# Compiling and running
+## Compiling and running
 To compile the program, simply run 
 ```
 make
@@ -14,7 +14,7 @@ on the project's parent direcotry. To run in, you have to insert one, or two arg
 ./build/readers_writers 83 fast
 ```
 
-# Example of execution
+## Example of execution
 
 ```
 $ ./build/readers_writers 36 fast
