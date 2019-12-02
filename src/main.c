@@ -20,19 +20,18 @@ int main(int argc, char const *argv[]) {
     else if (strcmp(argv[2], "medium") == 0)
       l =15;
     else
-      l = 20;
+      l = 30;
   }
   /*initiallize the rand seed*/
   srand(time(NULL));
-
   /*randomize the number of entries, loops and processes*/
   int n_entries = rand_num(10,500);
-  int n_processes = rand_num(10,40);
-  int n_loops = rand_num(10,50);
+  int n_processes = rand_num(10,90);
+  int n_loops = rand_num(10,40);
   /*we get the readers/writers ration from the command line*/
   int r_w_ratio = atoi(argv[1]);
   /*run the program*/
-  printf("Opperating with %d processes of maximum %d loops on %d entries\n", n_processes, n_loops, n_entries);
+  printf("Operating with %d processes of maximum %d loops on %d entries\n", n_processes, n_loops, n_entries);
   coordinator(n_entries, n_processes, n_loops, r_w_ratio, l);
 
   exit(EXIT_SUCCESS);

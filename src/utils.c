@@ -16,6 +16,9 @@ void print_error(ErrorCode error) {
   else if (error == ARG_ERR)
     printf("You have to give an argument, so we know the percentage of the raders\n");
 
+  else if (error == TIME_ERR)
+    printf("Error while calling the time function\n");
+    
   exit(EXIT_FAILURE);
 }
 /*return a random integer between low and high*/
@@ -27,7 +30,7 @@ int rand_num(int low, int high) {
 useconds_t alloc_time(int l) {
   float rnd = ((float)rand()) / RAND_MAX;
   /*avoid extreme delays*/
-  if (rnd < 0.1)
+  if (rnd < 0.3)
     rnd += 0.2;
   int ret = 25 * (-logf(rnd) / l);
   return 1.0e6 * ret;

@@ -9,12 +9,14 @@ enum {
 typedef struct {
   int write;
   int read;
+  int curr_readers;
 } Entry;
 
 typedef enum ErrorCode {
   ARG_ERR,
   SHM_ERR,
-  FORK_ERR
+  FORK_ERR,
+  TIME_ERR
 } ErrorCode;
 
 void print_error(ErrorCode error);

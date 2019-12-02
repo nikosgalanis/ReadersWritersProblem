@@ -26,24 +26,15 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
   Entry* entries = (Entry*) shmat(shm_id, (void*)0, 0);
   if (entries == (Entry *)(-1))
     print_error(SHM_ERR);
-  /*allocate shared memory for the total number of readers*/
-  if ((shm_id = shmget(IPC_PRIVATE, n_entries * sizeof(int), IPC_CREAT|0666)) == -1)
-    print_error(SHM_ERR);
-  int* readers = (int*) shmat(shm_id, NULL, 0);
-  /*initiallize the current readers array*/
-  for (size_t i = 0; i < n_entries; ++i) {
-    readers[i] = 0;
-  }
   /*Initialize read and write values*/
   for (size_t i = 0; i < n_entries; ++i) {
     entries[i].read = 0;
     entries[i].write = 0;
+    entries[i].curr_readers = 0;
   }
-  /*meaure the time that all the processes take*/
-  double sttime = ((double) clock()) / CLOCKS_PER_SEC;  /* Search start time */
   /*create the number of processes given*/
   pid_t pid;
-  for (size_t i = 0; i < n_processes; i++) {
+  for (size_t i = 0; i < n_processes; ++i) {
     pid = fork();
     if (pid < 0)
       print_error(FORK_ERR);
@@ -51,23 +42,29 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
       /*child process*/
       /*keep track of the process stats*/
       size_t proc_rd = 0; size_t proc_wrt = 0; size_t wait_time = 0;
+      double time_taken = 0;
+      /*re-initiallize the rand, to produce different results on every process*/
+      srand(time(NULL) - getpid());
       /*we are going to run each process for a pre-known number of loops*/
-      for (size_t j = 0; j < rand_num(0, n_loops); ++j) {
-        /*re-initiallize the rand, to produce different results on every process*/
-        srand(time(NULL) - (i+j));
+      size_t loops = rand_num(1, n_loops);
+      /*measure the time elapsed for the process*/
+      struct timespec start, end;
+      if(clock_gettime(CLOCK_MONOTONIC, &start) == -1)
+        print_error(TIME_ERR);
+      /*read n write for specified loops*/
+      for (size_t j = 0; j < loops; ++j) {
         /*choose which entry to operate on*/
-        size_t ind = rand_num(0,n_entries-1);
+        size_t ind = rand_num(0, n_entries - 1);
         /*choose whether to write, or read*/
         size_t rnd = rand_num(0,100);
+        useconds_t time = alloc_time(l);
+        usleep(time);
+        wait_time += time;
         if (rnd < r_w_ratio) {
-          /*allocate a roandom time and make the process sleep*/
-          useconds_t time = alloc_time(l);
-          usleep(time);
-          wait_time += time;
           /*operation for reading from an entry*/
           sem_wait(&mutex[ind]);
-          readers[ind]++;
-          if (readers[ind] == 1)
+          entries[ind].curr_readers++;
+          if (entries[ind].curr_readers == 1)
             sem_wait(&wrt[ind]);
           sem_post(&mutex[ind]);
           /*critical section*/
@@ -75,16 +72,12 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
           entries[ind].read++;
           /*end of critical section, unblock the semaphore*/
           sem_wait(&mutex[ind]);
-          readers[ind]--;
-          if (readers[ind] == 0)
+          entries[ind].curr_readers--;
+          if (entries[ind].curr_readers == 0)
             sem_post(&wrt[ind]);
           sem_post(&mutex[ind]);
         }
         else {
-          /*allocate a roandom time and make the process sleep*/
-          size_t time = alloc_time(l);
-          usleep(time);
-          wait_time += time;
           /*operation for writing an entry*/
           sem_wait(&wrt[ind]);
           /*enter critical section*/
@@ -94,9 +87,16 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
           /*end of critical section*/
         }
       }
+      sleep(1);
+      /*find the current time*/
+      if(clock_gettime(CLOCK_MONOTONIC, &end) == -1)
+        print_error(TIME_ERR);
+      /*compute the time difference since we started the process*/
+      time_taken = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) * 1.0e-9;
+
       /*print statistics for the process*/
-      printf("Peer %3ld finished! Reads: %4ld | Writes: %4ld times | average waiting time %.2f\n",
-      i, proc_rd, proc_wrt, (1.0 * wait_time*1.0e-6) / (1.0 * n_loops));
+      printf("Peer %3ld finished! Reads: %3ld | Writes: %3ld times | average waiting time %.2f | Loops %3ld\n",
+      i, proc_rd, proc_wrt, time_taken / loops, loops);
       /*exit, as the child has finished its job*/
       exit(EXIT_SUCCESS);
     }
@@ -120,7 +120,6 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
 
   /*free the shared memory*/
   shmdt((void *) entries);
-  shmdt((void *) readers);
   /*free the semaphores*/
   for (size_t i = 0; i < n_entries; ++i){
     sem_destroy(&mutex[i]);

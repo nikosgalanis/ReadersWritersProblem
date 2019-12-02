@@ -1,21 +1,84 @@
-Opperating with 14 processes of maximum 36 loops on 15 entries
-Peer   5 finished! Reads:    0 | Writes:    1 times | average waiting time 0.06
-Peer   0 finished! Reads:    4 | Writes:    1 times | average waiting time 0.17
-Peer  11 finished! Reads:    1 | Writes:   20 times | average waiting time 0.56
-Peer  12 finished! Reads:    0 | Writes:   21 times | average waiting time 0.58
-Peer  13 finished! Reads:    0 | Writes:   21 times | average waiting time 0.61
-Peer   4 finished! Reads:    0 | Writes:   25 times | average waiting time 0.69
-Peer   1 finished! Reads:   26 | Writes:    1 times | average waiting time 0.72
-Peer   2 finished! Reads:   27 | Writes:    0 times | average waiting time 0.75
-Peer   3 finished! Reads:   26 | Writes:    1 times | average waiting time 0.78
-Peer   7 finished! Reads:   28 | Writes:    2 times | average waiting time 0.78
-Peer   8 finished! Reads:   29 | Writes:    1 times | average waiting time 0.81
-Peer   9 finished! Reads:   30 | Writes:    0 times | average waiting time 0.83
-Peer  10 finished! Reads:   28 | Writes:    2 times | average waiting time 0.86
-Peer   6 finished! Reads:    0 | Writes:   31 times | average waiting time 0.86
+Operating with 76 processes of maximum 13 loops on 421 entries
+Peer   2 finished! Reads:   2 | Writes:   3 times | average waiting time 0.00 | Loops   5
+Peer   3 finished! Reads:   1 | Writes:   5 times | average waiting time 0.00 | Loops   6
+Peer   6 finished! Reads:   4 | Writes:   1 times | average waiting time 0.00 | Loops   5
+Peer   4 finished! Reads:   2 | Writes:   5 times | average waiting time 0.00 | Loops   7
+Peer  11 finished! Reads:   0 | Writes:   1 times | average waiting time 0.00 | Loops   1
+Peer  17 finished! Reads:   1 | Writes:   4 times | average waiting time 0.00 | Loops   5
+Peer  18 finished! Reads:   1 | Writes:   2 times | average waiting time 0.00 | Loops   3
+Peer  13 finished! Reads:   7 | Writes:   3 times | average waiting time 0.00 | Loops  10
+Peer  22 finished! Reads:   0 | Writes:   1 times | average waiting time 0.00 | Loops   1
+Peer  24 finished! Reads:   1 | Writes:   1 times | average waiting time 0.00 | Loops   2
+Peer  23 finished! Reads:   0 | Writes:   2 times | average waiting time 0.00 | Loops   2
+Peer  25 finished! Reads:   0 | Writes:   1 times | average waiting time 0.00 | Loops   1
+Peer  28 finished! Reads:   4 | Writes:   4 times | average waiting time 0.00 | Loops   8
+Peer  26 finished! Reads:   4 | Writes:   6 times | average waiting time 0.00 | Loops  10
+Peer  36 finished! Reads:   1 | Writes:   1 times | average waiting time 0.00 | Loops   2
+Peer  29 finished! Reads:   2 | Writes:   3 times | average waiting time 0.00 | Loops   5
+Peer  30 finished! Reads:   2 | Writes:   3 times | average waiting time 0.00 | Loops   5
+Peer  46 finished! Reads:   0 | Writes:   1 times | average waiting time 0.00 | Loops   1
+Peer  49 finished! Reads:   3 | Writes:   0 times | average waiting time 0.00 | Loops   3
+Peer  43 finished! Reads:   2 | Writes:   6 times | average waiting time 0.00 | Loops   8
+Peer  55 finished! Reads:   0 | Writes:   1 times | average waiting time 0.00 | Loops   1
+Peer  50 finished! Reads:   3 | Writes:   4 times | average waiting time 0.00 | Loops   7
+Peer  64 finished! Reads:   1 | Writes:   1 times | average waiting time 0.00 | Loops   2
+Peer  56 finished! Reads:   0 | Writes:   4 times | average waiting time 0.00 | Loops   4
+Peer  66 finished! Reads:   2 | Writes:   1 times | average waiting time 0.00 | Loops   3
+Peer  54 finished! Reads:   1 | Writes:   5 times | average waiting time 0.00 | Loops   6
+Peer  57 finished! Reads:   1 | Writes:   3 times | average waiting time 0.00 | Loops   4
+Peer  73 finished! Reads:   0 | Writes:   2 times | average waiting time 0.00 | Loops   2
+Peer  53 finished! Reads:   6 | Writes:   6 times | average waiting time 0.00 | Loops  12
+Peer  71 finished! Reads:   0 | Writes:   9 times | average waiting time 0.00 | Loops   9
+Peer  32 finished! Reads:   2 | Writes:   2 times | average waiting time 0.00 | Loops   4
+Peer  35 finished! Reads:   3 | Writes:   6 times | average waiting time 0.00 | Loops   9
+Peer  31 finished! Reads:   1 | Writes:   2 times | average waiting time 0.00 | Loops   3
+Peer  72 finished! Reads:   0 | Writes:   7 times | average waiting time 0.00 | Loops   7
+Peer  65 finished! Reads:   4 | Writes:   5 times | average waiting time 0.00 | Loops   9
+Peer  34 finished! Reads:   2 | Writes:   9 times | average waiting time 0.00 | Loops  11
+Peer  67 finished! Reads:   3 | Writes:   5 times | average waiting time 0.00 | Loops   8
+Peer  75 finished! Reads:   3 | Writes:   5 times | average waiting time 0.00 | Loops   8
+Peer   0 finished! Reads:   4 | Writes:   3 times | average waiting time 0.14 | Loops   7
+Peer   5 finished! Reads:   2 | Writes:   1 times | average waiting time 0.33 | Loops   3
+Peer   1 finished! Reads:   4 | Writes:   7 times | average waiting time 0.09 | Loops  11
+Peer   7 finished! Reads:   4 | Writes:   9 times | average waiting time 0.08 | Loops  13
+Peer   8 finished! Reads:   4 | Writes:   7 times | average waiting time 0.09 | Loops  11
+Peer  12 finished! Reads:   2 | Writes:  10 times | average waiting time 0.08 | Loops  12
+Peer  15 finished! Reads:   3 | Writes:   9 times | average waiting time 0.08 | Loops  12
+Peer  20 finished! Reads:   2 | Writes:  10 times | average waiting time 0.08 | Loops  12
+Peer  27 finished! Reads:   2 | Writes:   2 times | average waiting time 0.25 | Loops   4
+Peer  37 finished! Reads:   7 | Writes:   3 times | average waiting time 0.10 | Loops  10
+Peer  45 finished! Reads:   5 | Writes:   2 times | average waiting time 0.14 | Loops   7
+Peer  51 finished! Reads:   3 | Writes:   3 times | average waiting time 0.17 | Loops   6
+Peer  40 finished! Reads:   5 | Writes:   8 times | average waiting time 0.08 | Loops  13
+Peer  62 finished! Reads:   1 | Writes:   3 times | average waiting time 0.25 | Loops   4
+Peer  42 finished! Reads:   2 | Writes:  10 times | average waiting time 0.08 | Loops  12
+Peer  52 finished! Reads:   5 | Writes:   7 times | average waiting time 0.08 | Loops  12
+Peer  44 finished! Reads:   4 | Writes:   7 times | average waiting time 0.09 | Loops  11
+Peer  59 finished! Reads:   2 | Writes:   0 times | average waiting time 0.50 | Loops   2
+Peer  38 finished! Reads:   4 | Writes:   1 times | average waiting time 0.20 | Loops   5
+Peer  61 finished! Reads:   2 | Writes:   2 times | average waiting time 0.25 | Loops   4
+Peer  60 finished! Reads:   3 | Writes:  10 times | average waiting time 0.08 | Loops  13
+Peer  70 finished! Reads:   4 | Writes:   4 times | average waiting time 0.12 | Loops   8
+Peer  39 finished! Reads:   5 | Writes:   6 times | average waiting time 0.09 | Loops  11
+Peer  63 finished! Reads:   4 | Writes:   5 times | average waiting time 0.11 | Loops   9
+Peer  68 finished! Reads:   2 | Writes:   5 times | average waiting time 0.14 | Loops   7
+Peer  10 finished! Reads:   4 | Writes:   4 times | average waiting time 0.25 | Loops   8
+Peer  14 finished! Reads:   4 | Writes:   7 times | average waiting time 0.18 | Loops  11
+Peer  16 finished! Reads:   3 | Writes:   5 times | average waiting time 0.25 | Loops   8
+Peer  21 finished! Reads:   3 | Writes:   2 times | average waiting time 0.40 | Loops   5
+Peer  41 finished! Reads:   0 | Writes:   4 times | average waiting time 0.50 | Loops   4
+Peer  47 finished! Reads:   2 | Writes:   9 times | average waiting time 0.18 | Loops  11
+Peer  58 finished! Reads:   2 | Writes:   3 times | average waiting time 0.40 | Loops   5
+Peer  33 finished! Reads:   5 | Writes:   1 times | average waiting time 0.33 | Loops   6
+Peer  69 finished! Reads:   5 | Writes:   8 times | average waiting time 0.15 | Loops  13
+Peer   9 finished! Reads:   4 | Writes:   6 times | average waiting time 0.30 | Loops  10
+Peer  19 finished! Reads:   0 | Writes:  10 times | average waiting time 0.30 | Loops  10
+Peer  48 finished! Reads:   7 | Writes:   6 times | average waiting time 0.23 | Loops  13
+Peer  74 finished! Reads:   5 | Writes:   7 times | average waiting time 0.25 | Loops  12
 -----------------------Coordinator results-----------------------
 Coordinator finally ended
-The total number of processes was 14, with each one running maximum 36 times
-15 entries were allocated, to operate on
-In total, they were 127 writes and 199 reads
+The total number of processes was 76, with each one running maximum 13 times
+421 entries were allocated, to operate on
+In total, they were 336 writes and 198 reads
 -----------------------------------------------------------------
+
