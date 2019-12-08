@@ -24,10 +24,11 @@ int main(int argc, char const *argv[]) {
   }
   /*initiallize the rand seed*/
   srand(time(NULL));
-  /*randomize the number of entries, loops and processes*/
-  int n_entries = rand_num(10,500);
-  int n_processes = rand_num(10,90);
-  int n_loops = rand_num(10,40);
+  /*get the number of entries, loops and processes*/
+  int n_entries, n_processes, n_loops;
+  printf("Give the number of entries\n"); scanf("%d",&n_entries);
+  printf("Give the number of processes\n"); scanf("%d",&n_processes);
+  printf("Give the number of loops\n"); scanf("%d",&n_loops);
   /*we get the readers/writers ration from the command line*/
   int r_w_ratio = atoi(argv[1]);
   /*run the program*/

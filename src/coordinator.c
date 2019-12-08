@@ -55,11 +55,11 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
       for (size_t j = 0; j < loops; ++j) {
         /*choose which entry to operate on*/
         size_t ind = rand_num(0, n_entries - 1);
-        /*choose whether to write, or read*/
+        /*choose whether to write, or read, according to the ratio*/
         size_t rnd = rand_num(0,100);
+        /*allocate a random time margin, an sleep*/
         useconds_t time = alloc_time(l);
         usleep(time);
-        wait_time += time;
         if (rnd < r_w_ratio) {
           /*operation for reading from an entry*/
           sem_wait(&mutex[ind]);
@@ -68,6 +68,7 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
             sem_wait(&wrt[ind]);
           sem_post(&mutex[ind]);
           /*critical section*/
+          /*edit the counters*/
           proc_rd++;
           entries[ind].read++;
           /*end of critical section, unblock the semaphore*/
@@ -81,19 +82,18 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
           /*operation for writing an entry*/
           sem_wait(&wrt[ind]);
           /*enter critical section*/
+          /*edit the counters*/
           proc_wrt++;
           entries[ind].write++;
           sem_post(&wrt[ind]);
           /*end of critical section*/
         }
       }
-      sleep(1);
       /*find the current time*/
       if(clock_gettime(CLOCK_MONOTONIC, &end) == -1)
         print_error(TIME_ERR);
       /*compute the time difference since we started the process*/
       time_taken = (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) * 1.0e-9;
-
       /*print statistics for the process*/
       printf("Peer %3ld finished! Reads: %3ld | Writes: %3ld times | average waiting time %.2f | Loops %3ld\n",
       i, proc_rd, proc_wrt, time_taken / loops, loops);
@@ -101,9 +101,10 @@ void coordinator(size_t n_entries, size_t n_processes, size_t n_loops, size_t r_
       exit(EXIT_SUCCESS);
     }
   }
-  /*parent code, all the childs have previously exited*/
-  for(size_t i = 0; i < n_processes; ++i)
-    wait(&pid);
+  /*parent is waiting for all children to exit*/
+  for(size_t i = 0; i < n_processes; ++i){
+    wait(NULL);
+  }
   /*print stats*/
   size_t writes = 0, reads = 0;
   for (size_t i = 0; i < n_entries; ++i) {
